@@ -468,6 +468,7 @@ cs:
   password_reset_success: Heslo bylo zresetováno.
   password_different_notice: Potvrzovací heslo nesouhlasí.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

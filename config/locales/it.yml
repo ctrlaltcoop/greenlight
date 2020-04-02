@@ -465,6 +465,7 @@ it:
   password_reset_success: La password è stata reimpostata.
   password_different_notice: La conferma della password non coincide.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

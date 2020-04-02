@@ -475,6 +475,7 @@ nl:
   password_reset_success: Wachtwoord is opnieuw ingesteld.
   password_different_notice: Wachtwoordbevestiging komt niet overeen.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

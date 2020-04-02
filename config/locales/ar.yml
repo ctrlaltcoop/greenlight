@@ -475,6 +475,7 @@ ar:
   password_reset_success: تم إعادة تعيين كلمة المرور.
   password_different_notice: تأكيد كلمة المرور غير متطابق.
   provider:
+    saml: SAML
     google: Google
     office365: أوفيس 365
     twitter: تويتر

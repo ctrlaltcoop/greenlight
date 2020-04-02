@@ -348,6 +348,7 @@ vi_VN:
   password_reset_success: Mật khẩu đã được đặt lại
   password_different_notice: Xác nhận mật khẩu không khớp.
   provider:
+    saml: SAML
     google: Google
     office365:
     twitter: Twitter

@@ -461,6 +461,7 @@ hu_HU:
   password_reset_success: A jelszót visszaállítottuk.
   password_different_notice: A két új jelszó eltér egymástól.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

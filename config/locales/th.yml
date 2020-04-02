@@ -402,6 +402,7 @@ th:
   password_reset_success: รีเซ็ตรหัสผ่านแล้ว
   password_different_notice: การยืนยันรหัสผ่านไม่ตรงกัน
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

@@ -353,6 +353,7 @@ nb:
   password_reset_success: Passord er tilbakestilt.
   password_different_notice: Bekreftelse av passord stemmer ikke.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

@@ -436,6 +436,7 @@ ru:
   password_reset_success: Пароль успешно сброшен.
   password_different_notice: Подтверждение пароля не совпадает.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

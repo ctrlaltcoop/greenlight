@@ -348,6 +348,7 @@ sv_SE:
   password_reset_success: Lösenordet har återställts.
   password_different_notice: Lösenordsbekräftelsen matchar inte.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

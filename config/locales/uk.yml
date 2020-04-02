@@ -436,6 +436,7 @@ uk:
   password_reset_success: Пароль успішно скинуто.
   password_different_notice: Підтвердження пароля не збігається.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

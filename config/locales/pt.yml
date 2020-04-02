@@ -348,6 +348,7 @@ pt:
   password_reset_success: A sua senha foi resetada.
   password_different_notice: A Confirmação de Senha não corresponde a Senha inserida acima.
   provider:
+    saml: SAML
     google: Google
     office365:
     twitter: Twitter

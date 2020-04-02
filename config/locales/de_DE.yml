@@ -475,6 +475,7 @@ de_DE:
   password_reset_success: Passwort wurde zurückgesetzt.
   password_different_notice: Passwortbestätigung ist nicht zutreffend.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

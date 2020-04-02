@@ -475,6 +475,7 @@ ja_JP:
   password_reset_success: パスワードがリセットされました。
   password_different_notice: パスワードが一致しません。
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

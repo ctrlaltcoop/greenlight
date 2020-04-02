@@ -403,6 +403,7 @@ tr_TR:
   password_reset_success: Şifre sıfırlandı.
   password_different_notice: Parola Onayı eşleşmiyor.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

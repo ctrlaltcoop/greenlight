@@ -404,6 +404,7 @@ bg:
   password_reset_success: Паролата е нулирана
   password_different_notice: Паролата за потвърждение не съвпада
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

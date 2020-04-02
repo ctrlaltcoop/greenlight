@@ -20,13 +20,16 @@ Rails.application.config.omniauth_openid_connect = ENV['OPENID_CONNECT_CLIENT_ID
                                                    ENV['OPENID_CONNECT_CLIENT_SECRET'].present? &&
                                                    ENV['OPENID_CONNECT_ISSUER'].present?
 
+# Setup the Omniauth middleware.
+Rails.application.config.omniauth_saml = ENV['SAML_ISSUER'].present? && ENV['SAML_IDP_URL'].present? && ENV['SAML_IDP_CERT_FINGERPRINT'].present?
+
+
 SETUP_PROC = lambda do |env|
   OmniauthOptions.omniauth_options env
 end
 
 OmniAuth.config.logger = Rails.logger
 
-# Setup the Omniauth middleware.
 Rails.application.config.middleware.use OmniAuth::Builder do
   if Rails.configuration.omniauth_bn_launcher
     provider :bn_launcher, client_id: ENV['CLIENT_ID'],
@@ -79,6 +82,22 @@ Rails.application.config.middleware.use OmniAuth::Builder do
           redirect_uri: redirect
         },
         setup: SETUP_PROC
+    end
+    if Rails.configuration.omniauth_saml
+      Rails.application.config.providers << :saml
+
+      provider :saml,
+        issuer: ENV['SAML_ISSUER'],
+        idp_sso_target_url: ENV['SAML_IDP_URL'],
+        idp_cert_fingerprint: ENV['SAML_IDP_CERT_FINGERPRINT'],
+        name_identifier_format: ENV['SAML_NAME_IDENTIFIER'] || "urn:mace:dir:attribute-def:eduPersonPrincipalName",
+        attribute_statements: { \
+          nickname:	[ENV['SAML_USERNAME_ATTRIBUTE'] || 'urn:mace:dir:attribute-def:eduPersonPrincipalName'],\
+          email:		[ENV['SAML_EMAIL_ATTRIBUTE'] || 'urn:mace:dir:attribute-def:mail'], \
+          last_name:	[ENV['SAML_LASTNAME_ATTRIBUTE'] || 'urn:mace:dir:attribute-def:sn'], \
+          first_name:	[ENV['SAML_FIRSTNAME_ATTRIBUTE'] || 'urn:mace:dir:attribute-def:givenName'],\
+          name:		[ENV['SAML_COMMONNAME_ATTRIBUTE'] || 'urn:mace:dir:attribute-def:cn'] },
+        uid_attribute: ENV['SAML_UID_ATTRIBUTE'] || "urn:mace:dir:attribute-def:uid"
     end
   end
 end

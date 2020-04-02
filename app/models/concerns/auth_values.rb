@@ -16,8 +16,8 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
-module AuthValues
   extend ActiveSupport::Concern
+  module AuthValues
 
   # Provider attributes.
   def auth_name(auth)

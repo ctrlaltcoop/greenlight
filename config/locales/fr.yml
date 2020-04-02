@@ -475,6 +475,7 @@ fr:
   password_reset_success: Le mot de passe a été réinitialisé.
   password_different_notice: La confirmation du mot de passe ne correspond pas.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

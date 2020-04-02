@@ -436,6 +436,7 @@ sk_SK:
   password_reset_success: Heslo bolo zresetované.
   password_different_notice: Potvrdzovacie heslo nesúhlasí.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter

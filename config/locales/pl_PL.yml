@@ -348,6 +348,7 @@ pl_PL:
   password_reset_success: Hasło zostało zresetowane.
   password_different_notice: Potwierdzenie hasła nie pasuje.
   provider:
+    saml: SAML
     google: Google
     office365: Office 365
     twitter: Twitter
