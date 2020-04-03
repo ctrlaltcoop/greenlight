@@ -191,6 +191,7 @@ class SessionsController < ApplicationController
   # Check if the user already exists, if not then check for invitation
   def passes_invite_reqs
     return true if @user_exists
+    return true if @auth['provider'] == 'saml'
 
     invitation = check_user_invited("", session[:invite_token], @user_domain)
     invitation[:present]
