@@ -2,7 +2,7 @@ env:
   RUBY_VERSION: 2.7.2
 
 
-name: CD Push
+name: Build Push
 on:
   push:
     branches: "master"
@@ -21,8 +21,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Step Short SHA
-        run: echo "::set-output short_sha=${GITHUB_SHA::8}"
+      - name: Compute Short SHA
+        uses: farhatahmad/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 7
+
+      - name: Get Branch Name
+        uses: farhatahmad/branch-names@v2
+        id: branch-name
 
       - name: Build and Push latest
         uses: docker/build-push-action@v2
@@ -31,4 +38,4 @@ jobs:
           tags: |
             bigbluebutton/greenlight:master
             bigbluebutton/greenlight:latest
-          build-args: version_code=${{ steps.vars.outputs.short_sha  }}
+          build-args: version_code=${{ steps.branch-name.outputs.ref_branch }} (${{ steps.short-sha.outputs.sha }})
